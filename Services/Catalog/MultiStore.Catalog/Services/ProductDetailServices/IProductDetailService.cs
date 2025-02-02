@@ -4,9 +4,10 @@ namespace MultiStore.Catalog.Services.ProductDetailDetailServices
 {
     public interface IProductDetailService
     {
-        Task<List<ResultProductDetailDto>> GetAllProductDetailAsync();
+		//önce bu interface'i oluşturduk. sonrasında bu interface'i implemente eden ProductDetailService'i oluşturduk.
+		Task<List<ResultProductDetailDto>> GetAllProductDetailAsync();
         Task CreateProductDetailAsync(CreateProductDetailDto createProductDetailDto);
-        Task UpdateProductDetailDtoAsync(UpdateProductDetailDto updateProductDetailDto);
+        Task UpdateProductDetailAsync(UpdateProductDetailDto updateProductDetailDto);
         Task DeleteProductDetailAsync(string id);
         Task<GetByIdProductDetailDto> GetByIdProductDetailAsync(string id);
     }

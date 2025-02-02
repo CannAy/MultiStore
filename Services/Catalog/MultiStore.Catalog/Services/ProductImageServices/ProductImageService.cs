@@ -8,8 +8,8 @@ namespace MultiStore.Catalog.Services.ProductImageServices
 {
     public class ProductImageService : IProductImageService
     {
-        private readonly IMongoCollection<ProductImage> _ProductImageCollection; //MongoDb => Table
-        private readonly IMapper _mapper;
+        private readonly IMongoCollection<ProductImage> _ProductImageCollection; //IMongoCollection aracılığıyla ProductImage Collection'ına erişim sağladık.
+		private readonly IMapper _mapper;
 
         public ProductImageService(IMapper mapper, IDatabaseSettings _databaseSettings)
         {
@@ -26,7 +26,7 @@ namespace MultiStore.Catalog.Services.ProductImageServices
 
         public async Task DeleteProductImageAsync(string id)
         {
-            await _ProductImageCollection.DeleteOneAsync(x => x.ProductImageID == id);
+            await _ProductImageCollection.DeleteOneAsync(x => x.ProductImageId == id);
         }
 
         public async Task<List<ResultProductImageDto>> GetAllProductImageAsync()
@@ -37,14 +37,14 @@ namespace MultiStore.Catalog.Services.ProductImageServices
 
         public async Task<GetByIdProductImageDto> GetByIdProductImageAsync(string id)
         {
-            var values = await _ProductImageCollection.Find<ProductImage>(x => x.ProductImageID == id).FirstOrDefaultAsync();
+            var values = await _ProductImageCollection.Find<ProductImage>(x => x.ProductImageId == id).FirstOrDefaultAsync();
             return _mapper.Map<GetByIdProductImageDto>(values);
         }
 
-        public async Task UpdateProductImageDtoAsync(UpdateProductImageDto updateProductImageDto)
+        public async Task UpdateProductImageAsync(UpdateProductImageDto updateProductImageDto)
         {
             var values = _mapper.Map<ProductImage>(updateProductImageDto);
-            await _ProductImageCollection.FindOneAndReplaceAsync(x => x.ProductImageID == updateProductImageDto.ProductImageID, values);
+            await _ProductImageCollection.FindOneAndReplaceAsync(x => x.ProductImageId == updateProductImageDto.ProductImageId, values);
         }
     }
 }

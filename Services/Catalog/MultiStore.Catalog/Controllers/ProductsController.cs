@@ -9,9 +9,9 @@ namespace MultiStore.Catalog.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductService _productService;
+        private readonly IProductService _productService; // _productService isminde bir IProductService türünde değişken tanımlanır.
 
-        public ProductsController(IProductService ProductService)
+		public ProductsController(IProductService ProductService)
         {
             _productService = ProductService;
         }
@@ -47,7 +47,7 @@ namespace MultiStore.Catalog.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
         {
-            await _productService.UpdateProductDtoAsync(updateProductDto);
+            await _productService.UpdateProductAsync(updateProductDto);
             return Ok("Ürün başarıyla güncellendi");
         }
     }

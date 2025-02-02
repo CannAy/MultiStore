@@ -7,7 +7,7 @@ namespace MultiStore.Catalog.Entities
     {
         [BsonId] //MongoDB için.
         [BsonRepresentation(BsonType.ObjectId)] //ObjectId, uygulamaya bunun bir ID olduğunu bildiriyor.
-        public string ProductImageID { get; set; }
+        public string ProductImageId { get; set; }
         public string Image2 { get; set; }
         public string Image1 { get; set; }
         public string Image3 { get; set; }

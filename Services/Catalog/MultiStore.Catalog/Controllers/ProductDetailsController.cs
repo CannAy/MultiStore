@@ -48,7 +48,7 @@ namespace MultiStore.Catalog.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateProductDetail(UpdateProductDetailDto updateProductDetailDto)
         {
-            await _productDetailService.UpdateProductDetailDtoAsync(updateProductDetailDto);
+            await _productDetailService.UpdateProductDetailAsync(updateProductDetailDto);
             return Ok("Ürün detayı başarıyla güncellendi");
         }
     }

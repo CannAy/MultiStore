@@ -4,9 +4,10 @@ namespace MultiStore.Catalog.Services.ProductImageServices
 {
     public interface IProductImageService
     {
-        Task<List<ResultProductImageDto>> GetAllProductImageAsync();
+		//IProductImageService'i ilk interface olarak oluşturduk. Sonrasında bu interface'i implemente eden ProductImageService'i oluşturuyoruz.
+		Task<List<ResultProductImageDto>> GetAllProductImageAsync();
         Task CreateProductImageAsync(CreateProductImageDto createProductImageDto);
-        Task UpdateProductImageDtoAsync(UpdateProductImageDto updateProductImageDto);
+        Task UpdateProductImageAsync(UpdateProductImageDto updateProductImageDto);
         Task DeleteProductImageAsync(string id);
         Task<GetByIdProductImageDto> GetByIdProductImageAsync(string id);
     }

@@ -47,7 +47,7 @@ namespace MultiStore.Catalog.Controllers
         [HttpPut]
         public async Task<IActionResult> UpdateProductImage(UpdateProductImageDto updateProductImageDto)
         {
-            await _productImageService.UpdateProductImageDtoAsync(updateProductImageDto);
+            await _productImageService.UpdateProductImageAsync(updateProductImageDto);
             return Ok("Ürün görselleri başarıyla güncellendi");
         }
     }

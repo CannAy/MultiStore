@@ -7,7 +7,7 @@ namespace MultiStore.Catalog.Entities
     {
         [BsonId] //MongoDB için.
         [BsonRepresentation(BsonType.ObjectId)] //ObjectId, uygulamaya bunun bir ID olduğunu bildiriyor.
-        public string CategoryId { get; set; }
+        public string CategoryId { get; set; } //MongoDB'de id'ler string tutuluyor. İlişkisel veritabanlarında int.
         public string CategoryName { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 {
     public interface IDatabaseSettings
     {
-        //MongoDB Database ayarları yapacağımız alan/interface
+        //MongoDB Database ayarlari yapacagimiz alan/interface
         public string CategoryCollectionName { get; set; }
         public string ProductCollectionName { get; set; }
         public string ProductDetailCollectionName { get; set; }
