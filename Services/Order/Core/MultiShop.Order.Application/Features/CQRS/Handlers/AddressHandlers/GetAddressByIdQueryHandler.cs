@@ -10,16 +10,17 @@ using System.Threading.Tasks;
 
 namespace MultiShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
 {
-    public class GetAddressByIdQueryHandler
+    public class GetAddressByIdQueryHandler 
     {
-        private readonly IRepository<Address> _repository;
+		//Get ön eki CQRS'in query'leri için kullanılır genelde.
+		private readonly IRepository<Address> _repository;
 
         public GetAddressByIdQueryHandler(IRepository<Address> repository)
         {
             _repository = repository;
         }
-        public async Task<GetAddressByIdQueryResult> Handle(GetAddressByIdQuery query)
-        {
+        public async Task<GetAddressByIdQueryResult> Handle(GetAddressByIdQuery query) //GetAddressByIdQuery sınıfından bir nesne alacak ve bu nesneyi kullanarak bir GetAddressByIdQueryResult nesnesi döndürecek.
+		{
             var values = await _repository.GetByIdAsync(query.Id);
             return new GetAddressByIdQueryResult
             {

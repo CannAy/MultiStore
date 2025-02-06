@@ -4,9 +4,8 @@ using MultiStore.Discount.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddTransient<DapperContext>();
+builder.Services.AddTransient<DapperContext>(); //Satýrýn anlamý, AddTransient metodu ile DapperContext sýnýfýndan bir nesne oluþturuldu ve bu nesne her çaðrýldýðýnda yeni bir nesne oluþturulur.
 builder.Services.AddTransient<IDiscountService, DiscountService>();
-
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

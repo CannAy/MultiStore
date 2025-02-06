@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MultiStore.Order.Domain.Entities
 {
-    public class Address
-    {
+    public class Address //public kullanılmasının sebebi diğer katmanlar (API, Application, Infrastructure) tarafından erişilebilir olmasıdır.
+	{
         public int AddressId { get; set; }
         public string UserId { get; set; }
         public string District { get; set; }

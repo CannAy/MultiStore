@@ -8,8 +8,8 @@ namespace MultiStore.Order.Domain.Entities
 {
     public class Ordering
     {
-        public int OrderingId { get; set; }
-        public string UserId { get; set; }
+        public int OrderingId { get; set; } // {get; set;} anlamı bu property'nin dışarıdan set edilebilir ve okunabilir olduğudur.
+		public string UserId { get; set; }
         public decimal TotalPrice { get; set; }
         public DateTime OrderDate { get; set; }
         public List<OrderDetail> OrderDetails { get; set; }

@@ -13,13 +13,13 @@ namespace MultiShop.Order.Application.Features.CQRS.Handlers.AddressHandlers
     {
         private readonly IRepository<Address> _repository;
 
-        public GetAddressQueryHandler(IRepository<Address> repository)
-        {
+        public GetAddressQueryHandler(IRepository<Address> repository) // (IRepository<Address> repository) ile repository sınıfımızı enjekte ettik.
+		{
             _repository = repository;
         }
         public async Task<List<GetAddressQueryResult>> Handle() //bütün adresleri getiren methodumuz
         {
-            var values = await _repository.GetAllAsycn();
+            var values = await _repository.GetAllAsync();
             return values.Select(x => new GetAddressQueryResult
             {
                 AddressId = x.AddressId,

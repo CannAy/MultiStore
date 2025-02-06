@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MultiShop.Order.Application.Features.CQRS.Results.AddressResults
 {
-    public class GetAddressByIdQueryResult
-    {
+    public class GetAddressByIdQueryResult //get ön eki CQRS'in Result'ları için kullanılır.
+	{ 
         public int AddressId { get; set; }
         public string UserId { get; set; }
         public string District { get; set; }
